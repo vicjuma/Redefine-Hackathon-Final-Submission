@@ -1,0 +1,23 @@
+generator client {
+  provider        = "prisma-client"
+  output          = "../src/generated/prisma"
+  moduleFormat    = "cjs"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model DepositCommitment {
+  id              Int      @id @default(autoincrement())
+  commitment      String   @unique
+  user_address    String
+  deposit_amount  Decimal  // no @db.Numeric for SQLite
+  yield_amount    Decimal  // no @db.Numeric for SQLite
+  timestamp       DateTime @default(now())
+  is_withdrawn    Boolean  @default(false)
+  proof_validated Boolean  @default(false)
+  notes           String?
+
+  @@map("deposit_commitments") // keep the table name
+}
