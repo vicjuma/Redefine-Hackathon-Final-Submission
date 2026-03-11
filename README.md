@@ -48,12 +48,6 @@ Install the following before running the project.
 Node >= 18
 ```
 
-### PNPM or NPM
-
-```
-npm install -g pnpm
-```
-
 ### Python (for zk tooling)
 
 Python is required for some proof tooling.
@@ -80,12 +74,16 @@ Install Noir and proving tools.
 
 ```
 curl -L https://raw.githubusercontent.com/noir-lang/noirup/main/install | bash
-noirup
+noirup --version 1.0.0-beta.1
 ```
 
 ### Install Barretenberg
 
 Used for generating Ultra Honk proofs.
+
+```
+bbup --version 0.67.0
+```
 
 ### Install Garaga
 
@@ -98,8 +96,8 @@ Garaga is used to generate calldata for Starknet verifier contracts.
 Clone the repository.
 
 ```
-git clone <repo-url>
-cd Redefine-Hackathon
+git clone https://github.com/vicjuma/Redefine-Hackathon-Final-Submission.git
+cd Redefine-Hackathon-Final-Submission
 ```
 
 ---
@@ -127,7 +125,7 @@ npx prisma migrate dev
 Start the backend server:
 
 ```
-pnpm run start:dev
+npm run start:dev
 ```
 
 The backend is responsible for:
@@ -258,7 +256,7 @@ Run the components in the following order:
 
 ```
 cd api
-pnpm run start:dev
+npm run start:dev
 ```
 
 2️⃣ Frontend
